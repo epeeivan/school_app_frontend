@@ -35,7 +35,7 @@ const bottomItems = ref([
       <!-- texts & mobile actions -->
       <div class="flex flex-col">
         <div class="space-y-5 lg:text-left text-center text-white my-auto">
-          <h1 class="uppercase lg:text-5xl text-3xl">{{}}</h1>
+          <h1 class="uppercase lg:text-5xl text-3xl font bold">{{}}</h1>
           <span class="block">{{}}</span>
           <!-- mobile actions -->
           <div v-if="isMobile" class="flex space-x-5">

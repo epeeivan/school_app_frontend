@@ -8,25 +8,14 @@ defineProps({
 })
 </script>
 <template>
-  <div class="w-full h-full bg-primary-400 flex flex-col lg:px-[100px] px-[20px]">
-    <!-- text & image & actions -->
-    <div class="w-full grid lg:grid-cols-2">
-      <!-- texts & mobile actions -->
-      <div class="flex flex-col">
-        <div class="space-y-5 lg:text-left text-center text-white my-auto">
-          <h1 class="uppercase lg:text-5xl text-3xl">{{}}</h1>
-          <span class="block">{{}}</span>
-          <!-- mobile actions -->
-          <div v-if="isMobile" class="flex space-x-5">
-            <BaseButton color="secondary" :text="``" />
-            <BaseButton color="white" :text="``" />
-          </div>
-        </div>
-      </div>
-      <!-- images -->
-       <div class="flex">
-        <img src="/public/assets/images/lqnding_hero_image.png" class="mx-auto" alt="">
-       </div>
+  <div class="w-full flex flex-col lg:px-[100px] px-[20px]">
+    <div class="lg:w-8/12 space-y-5">
+      <h2 class="uppercase lg:text-5xl text-3xl mx-auto">
+        {{ $t('landing.about.title.p1') }}
+        <span class="block text-secondary-500">{{ $t('labels.about.title.p3') }}</span>
+      </h2>
+      <p>{{ $t('landing.about.description') }}</p>
+      <BaseButton color="secondary" :text="$t('labels.actions.see_more')" class="mx-auto" />
     </div>
   </div>
 </template>
