@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import BaseIcon from '@/components/bases/BaseIcon.vue'
 import { computed, useSlots } from 'vue'
-import BaseSvgIcon from './BaseSvgIcon.vue'
 
 const slots = useSlots()
 const props = defineProps({
@@ -52,16 +51,16 @@ const props = defineProps({
 })
 const isStroke = computed(() => props.mode === 'stroke')
 const currentColor = computed(() => {
-  const baseIconColor = '#31333E'
+  const baseIconColor = '#31533E'
   switch (props.color) {
     case 'primary':
       return {
-        button: `bg-primary border-primary ${isStroke.value ? 'text-primary' : 'text-dark-200'}`,
+        button: `bg-primary-400 border-primary ${isStroke.value ? 'text-primary' : 'text-white'}`,
         icon: '',
       }
     case 'secondary':
       return {
-        button: `bg-neutral-100 text-dark-100 dark:text-secondary-300 dark:bg-(--dark-500) border-neutral-100 dark:border-dark-400`,
+        button: `bg-secondary-500 secondary-500 ${isStroke.value ? 'text-secondary-500' : 'text-white'}`,
         icon: '',
       }
     case 'success':
@@ -125,7 +124,7 @@ const addMargin = (icon: boolean | string) => {
   <button
     v-bind="$attrs"
     :disabled="loading || disabled"
-    class="px-[15px] rounded-[10px] transition-all ease-in duration-100v flex items-center justify-center min-h-[40px] max-h-[40px] font-medium cursor-pointer"
+    class="px-[17.5px] rounded-[8px] transition-all ease-in duration-100v flex items-center justify-center min-h-[40px] max-h-[40px] font-medium cursor-pointer"
     :class="[
       currentColor.button,
       modeClasses,
@@ -136,13 +135,12 @@ const addMargin = (icon: boolean | string) => {
     ]"
   >
     <span :class="addMargin(loading || rightIcon)">
-      <BaseSvgIcon
+      <BaseIcon
         v-if="icon"
-        type="stroke"
-        :color="currentColor.icon"
-        :size="20"
+        :size="15"
+        :stroke-width="2"
         :name="icon"
-        :class="[text ? 'mr-2' : '']"
+        class="ml-2 my-auto"
       />
 
       <span class="block leading-none w-[max-content] my-auto">
@@ -150,18 +148,18 @@ const addMargin = (icon: boolean | string) => {
         <slot />
       </span>
     </span>
-    <base-icon
+    <BaseIcon
       v-if="loading"
-      :width="13"
-      :height="13"
+      :width="15"
+      :height="15"
       :stroke-width="2"
       :class="loadingClass"
       name="Loader"
     />
-    <base-icon
+    <BaseIcon
       v-if="rightIcon"
-      :width="13"
-      :height="13"
+      :width="15"
+      :height="15"
       :stroke-width="2"
       :name="rightIcon"
       class="ml-2 my-auto"

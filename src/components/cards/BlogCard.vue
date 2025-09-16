@@ -22,8 +22,8 @@ defineProps({
       :style="`background-image:src(${src})`"
     ></div>
     <div class="flex flex-col space-y-2">
-      <span class="block">{{ title }}</span>
-      <span class="block text-xs">{{ description }}</span>
+      <span class="block text-primary-400">{{ title }}</span>
+      <span class="block text-xs text-neutral-500">{{ description }}</span>
     </div>
   </div>
 </template>
