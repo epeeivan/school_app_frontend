@@ -1,4 +1,4 @@
-export const config =  {
+export const config = {
   x_align: 'right',
   y_align: 'top',
   duration: 5000,

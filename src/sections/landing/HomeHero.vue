@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import BaseButton from '@/components/bases/BaseButton.vue'
+import landingCircleImages from '@/assets/datas/landingCircleImages'
+import LandingButton from '@/components/LandingButton.vue'
+import LandingCircleTag from '@/components/LandingCircleTag.vue'
 import LandingHeroBottomBoxItem from '@/components/LandingHeroBottomBoxItem.vue'
 import { ref } from 'vue'
 defineProps({
@@ -20,7 +22,7 @@ const bottomItems = ref([
   },
   {
     text: 'certifications',
-    icon: 'Librarie',
+    icon: 'Library',
   },
   {
     text: 'certifications',
@@ -29,36 +31,54 @@ const bottomItems = ref([
 ])
 </script>
 <template>
-  <div class="w-full h-full bg-primary-400 flex flex-col lg:px-[100px] px-[20px]">
+  <div class="w-full h-dvh flex flex-col lg:pt-[200px] pt-[100px]">
     <!-- text & image & actions -->
-    <div class="w-full grid lg:grid-cols-2">
+    <div class="w-full grid lg:grid-cols-2 h-full lg:px-[100px] 2xl:px-[8%] 3xl:px-[10%] px-[20px]">
       <!-- texts & mobile actions -->
       <div class="flex flex-col">
-        <div class="space-y-5 lg:text-left text-center text-white my-auto">
-          <h1 class="uppercase lg:text-5xl text-3xl font bold">{{}}</h1>
-          <span class="block">{{}}</span>
+        <div class="space-y-[35px] lg:text-left text-center my-auto">
+          <div class="lg:space-y-5">
+            <h1 class="uppercase lg:text-4xl 3xl:text-5xl text-3xl font-black">
+              {{ $t('landing.home.hero.title.p1') }}
+              <span class="block text-secondary-100">{{ $t('landing.home.hero.title.p2') }}</span>
+            </h1>
+            <p class="lg:text-lg text-neutral-500">{{ $t('landing.home.hero.description') }}</p>
+          </div>
+
           <!-- mobile actions -->
-          <div v-if="isMobile" class="flex space-x-5">
-            <BaseButton color="secondary" :text="``" />
-            <BaseButton color="white" :text="``" />
+          <div class="lg:flex-row flex-col flex gap-5 capitalize">
+            <LandingButton color="primary" :text="$t('common.actions.get_started')" />
+            <LandingButton color="stroke-secondary" :text="$t('common.actions.register')" />
+          </div>
+          <div class="flex lg:flex-row flex-col space-x-5">
+            <div class="space-x-[-20px] my-auto flex lg:mx-0 mx-auto">
+              <LandingCircleTag
+                v-for="(tag, index) in landingCircleImages"
+                :key="`tag-${index}`"
+                :src="tag.url"
+              />
+            </div>
+            <span class="block my-auto lg:ml-5">{{ $t('messages.landing.hero.tags') }}</span>
           </div>
         </div>
       </div>
       <!-- images -->
-      <div class="flex">
-        <img src="/public/assets/images/lqnding_hero_image.png" class="mx-auto" alt="" />
+      <div v-if="!isMobile" class="flex relative">
+        <img
+          src="/public/assets/images/lqnding_hero_image.png"
+          class="mx-auto absolute bottom-0"
+          alt=""
+        />
       </div>
     </div>
-    <div
-      class="lg:rounded-t-[50px] rounded-t-[20px] lg:p-[50px] p-5 w-full"
-      :style="background: linear-gradient(163deg, #F39200 2.44%, #8D5500 109.97%);"
-    >
-      <div class="grid grid-cols-2 lg:grid-cols-4 mx-auto">
+    <div class="lg:px-[200px] lg:p-[50px] p-5 w-full z-10 bg-secondary-100">
+      <div class="grid grid-cols-2 lg:grid-cols-4 mx-auto gap-5">
         <LandingHeroBottomBoxItem
           v-for="(item, index) in bottomItems"
           :key="`bottom-item-${index}`"
           :label="item.text"
           :icon="item.icon"
+          :is-mobile="isMobile"
         />
       </div>
     </div>

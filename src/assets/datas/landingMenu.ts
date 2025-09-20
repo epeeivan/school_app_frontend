@@ -1,18 +1,18 @@
 export default [
   {
-    text: 'labels.menu.home',
+    text: 'common.menu.home',
     to: '',
   },
   {
-    text: 'labels.menu.programs',
+    text: 'common.menu.programs',
     to: '',
   },
   {
-    text: 'labels.menu.about',
+    text: 'common.menu.about',
     to: '',
   },
   {
-    text: 'labels.menu.news',
+    text: 'common.menu.news',
     to: '',
   },
 ]

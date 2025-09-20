@@ -24,8 +24,8 @@ function trigg() {
 <template>
   <a
     href=""
-    class="block rounded-[8px] px-5 py-2.5"
-    :class="isActive ? 'bg-secondary-100' : ''"
+    class="block rounded-[8px] px-5 py-2.5 capitalize"
+    :class="isActive ? 'bg-secondary-100 font-bold ' : ''"
     @click="trigg"
   >
     <span class="block">{{ text }}</span>

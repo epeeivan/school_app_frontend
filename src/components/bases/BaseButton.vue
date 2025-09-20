@@ -58,9 +58,19 @@ const currentColor = computed(() => {
         button: `bg-primary-400 border-primary ${isStroke.value ? 'text-primary' : 'text-white'}`,
         icon: '',
       }
+    case 'primary-light':
+      return {
+        button: `bg-primary-100 border-primary-100 ${isStroke.value ? 'text-primary-100' : 'text-white'}`,
+        icon: '',
+      }
+    case 'white':
+      return {
+        button: `bg-white border-white ${isStroke.value ? 'text-white' : 'text-dark-100'}`,
+        icon: '',
+      }
     case 'secondary':
       return {
-        button: `bg-secondary-500 secondary-500 ${isStroke.value ? 'text-secondary-500' : 'text-white'}`,
+        button: `bg-secondary-100 secondary-100 ${isStroke.value ? 'text-secondary-100' : 'text-white'}`,
         icon: '',
       }
     case 'success':
@@ -81,6 +91,11 @@ const currentColor = computed(() => {
     case 'warning':
       return {
         button: `bg-warning-700 border-warning-700 ${isStroke.value ? 'text-warning-700' : ''}`,
+        icon: '',
+      }
+    case 'neutral':
+      return {
+        button: `bg-neutral-700 border-neutral-500 ${isStroke.value ? 'text-neutral-700' : 'text-white'}`,
         icon: '',
       }
     default:
@@ -135,15 +150,9 @@ const addMargin = (icon: boolean | string) => {
     ]"
   >
     <span :class="addMargin(loading || rightIcon)">
-      <BaseIcon
-        v-if="icon"
-        :size="15"
-        :stroke-width="2"
-        :name="icon"
-        class="ml-2 my-auto"
-      />
+      <BaseIcon v-if="icon" :size="15" :stroke-width="2" :name="icon" class="ml-2 my-auto" />
 
-      <span class="block leading-none w-[max-content] my-auto">
+      <span class="block leading-none w-[max-content] my-auto font-bold">
         {{ text || '' }}
         <slot />
       </span>

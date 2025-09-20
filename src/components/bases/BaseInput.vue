@@ -108,7 +108,6 @@ const showPassword = () => {
         <BaseIcon
           :name="isPasswordShowed ? 'EyeOff' : 'Eye'"
           :size="20"
-
           class="my-auto ml-2 block'"
         />
       </button>
