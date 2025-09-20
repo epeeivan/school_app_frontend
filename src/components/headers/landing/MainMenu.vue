@@ -25,15 +25,15 @@ function closeOrOpenMenu() {
     class="lg:px-[100px] 2xl:px-[8%] 3xl:px-[10%] flex px-5 w-screen fixed bg-white z-20"
     :class="isMenuShowed && isMobile ? ' pb-5' : ''"
   >
-    <div class="flex my-auto border-b border-neutral-200 w-full lg:min-h-[100px] min-h-[70px]">
+    <div class="flex border-b border-neutral-200 w-full lg:min-h-[100px] min-h-[70px]">
       <!-- left -->
       <div
-        class="flex lg:flex-row flex-col w-full lg:my-auto"
+        class="flex lg:flex-row flex-col w-full lg:h-full"
         :class="isMenuShowed ? 'h-full' : 'h-full'"
       >
         <!-- logo -->
         <div
-          class="flex lg:pr-5 lg:border-r text-secondary-100 lg:border-secondary-100 lg:py-0 py-5"
+          class="flex lg:pr-5 lg:border-r text-secondary-100 lg:border-secondary-100 lg:py-0 py-5 lg:my-10"
           :class="isMobile ? 'w-full' : ''"
         >
           <span class="font-bold block my-auto mr-auto"> LOGO</span>
@@ -55,6 +55,7 @@ function closeOrOpenMenu() {
             v-for="(item, index) in landingMenu"
             :key="`menu-item-${index}`"
             :text="$t(item.text)"
+            :to="item.to"
           />
         </div>
       </div>

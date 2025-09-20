@@ -1,7 +1,7 @@
 export default [
   {
     text: 'common.menu.home',
-    to: '',
+    to: 'app.landing.home',
   },
   {
     text: 'common.menu.programs',

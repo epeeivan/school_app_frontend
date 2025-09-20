@@ -4,12 +4,23 @@ const routes = [
   {
     path: '/',
     name: 'app',
-    component: () => import('@/layouts/LandingLayout.vue'),
+    component: () => import('@/layouts/DefaultLayout.vue'),
+    redirect:()=>{
+      return {name:'app.landing'}
+
+    },
     children: [
       {
         path: '',
-        name: 'home',
-        component: () => import('@/views/landing/LandingHome.vue'),
+        name: 'app.landing',
+        component: () => import('@/layouts/LandingLayout.vue'),
+        children: [
+          {
+            path: '',
+            name: 'app.landing.home',
+            component: () => import('@/views/landing/LandingHome.vue'),
+          },
+        ],
       },
     ],
   },
