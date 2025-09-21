@@ -21,7 +21,7 @@ defineProps({
           {{ $t('landing.home.about.title.p1') }}
           <span class="text-secondary-100">{{ $t('landing.home.about.title.p2') }}</span>
         </h2>
-        <p>{{ $t('landing.home.about.content') }}</p>
+        <p class="text-white/[0.8]">{{ $t('landing.home.about.content') }}</p>
         <div class="grid grid-cols-2 gap-[50px]">
           <AboutCounter
             v-for="(counter, index) in landingCounters"

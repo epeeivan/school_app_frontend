@@ -17,9 +17,9 @@ const props = defineProps({
 const colorClasses = computed(() => {
   switch (props.color) {
     case 'primary':
-      return 'text-white bg-primary-400'
+      return 'text-white bg-primary-400 border-primary-400'
     case 'stroke-secondary':
-      return 'text-secondary-100 border-[3px] border-secondary-100'
+      return 'text-secondary-100  border-secondary-100'
     default:
       return ''
   }
@@ -28,7 +28,7 @@ const colorClasses = computed(() => {
 <template>
   <RouterLink
     :to="{ name: to }"
-    class="rounded-[10px] px-5 py-3 lg:text-lg font-bold"
+    class="rounded-[10px] px-5 py-3 lg:text-lg leading-[22px] font-bold border-[3px]"
     :class="colorClasses"
   >
     <span class="my-auto block">{{ text }}</span>

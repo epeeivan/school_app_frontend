@@ -12,7 +12,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="lg:text-sm relative">
+  <div class="lg:text-sm leading-[22px] relative text-dark-300">
     <MainMenu :is-mobile="isMobileScreen" />
     <RouterView></RouterView>
     <MainFooter />

@@ -31,7 +31,7 @@ const bottomItems = ref([
 ])
 </script>
 <template>
-  <div class="w-full h-dvh flex flex-col lg:pt-[200px] pt-[100px]">
+  <div class="w-full h-dvh flex flex-col lg:pt-[100px] pt-[100px]">
     <!-- text & image & actions -->
     <div class="w-full grid lg:grid-cols-2 h-full lg:px-[100px] 2xl:px-[8%] 3xl:px-[10%] px-[20px]">
       <!-- texts & mobile actions -->
@@ -40,7 +40,7 @@ const bottomItems = ref([
           <div class="lg:space-y-5">
             <h1 class="uppercase lg:text-4xl 3xl:text-5xl text-3xl font-black">
               {{ $t('landing.home.hero.title.p1') }}
-              <span class="block text-secondary-100">{{ $t('landing.home.hero.title.p2') }}</span>
+              <span class="block text-primary-400">{{ $t('landing.home.hero.title.p2') }}</span>
             </h1>
             <p class="lg:text-lg text-neutral-500">{{ $t('landing.home.hero.description') }}</p>
           </div>
@@ -72,7 +72,7 @@ const bottomItems = ref([
       </div>
     </div>
     <div class="lg:px-[200px] lg:p-[50px] p-5 w-full z-10 bg-secondary-100">
-      <div class="grid grid-cols-2 lg:grid-cols-4 mx-auto gap-5">
+      <div class="grid grid-cols-2 lg:grid-cols-4 mx-auto gap-5 lg:w-10/12">
         <LandingHeroBottomBoxItem
           v-for="(item, index) in bottomItems"
           :key="`bottom-item-${index}`"
