@@ -2,7 +2,6 @@
 import { computed, onMounted, ref } from 'vue'
 import BaseIcon from '@/components/bases/BaseIcon.vue'
 import BaseButton from './BaseButton.vue'
-import type { ModalActions } from '@/interfaces/common'
 
 const props = defineProps({
   title: {
@@ -54,7 +53,7 @@ const props = defineProps({
     default: false,
   },
   actions: {
-    type: Object as () => ModalActions,
+    type: Object,
     default: () => {
       return {
         cancel: {
@@ -65,7 +64,7 @@ const props = defineProps({
           text: 'common.actions.save',
           color: 'primary',
         },
-      } as ModalActions
+      }
     },
   },
 })

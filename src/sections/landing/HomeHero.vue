@@ -65,7 +65,7 @@ const bottomItems = ref([
       <!-- images -->
       <div v-if="!isMobile" class="flex relative">
         <img
-          src="/public/assets/images/lqnding_hero_image.png"
+          src="/assets/images/lqnding_hero_image.png"
           class="mx-auto absolute bottom-0"
           alt=""
         />
